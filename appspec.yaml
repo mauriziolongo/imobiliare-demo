@@ -1,0 +1,10 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:eu-central-1:044876182819:task-definition/hello-world:4"
+        LoadBalancerInfo:
+          ContainerName: "hello-world"
+          ContainerPort: 80
+        PlatformVersion: "LATEST"
