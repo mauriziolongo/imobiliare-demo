@@ -78,6 +78,5 @@
     "cpu": "1024",
     "memory": "3072",
     "registeredAt": "2023-09-02T15:06:52.236Z",
-    "registeredBy": "arn:aws:sts::044876182819:assumed-role/AWSCodePipelineServiceRole-eu-central-1-immobiliare-demo/1693667211945",
-    "tags": []
+    "registeredBy": "arn:aws:sts::044876182819:assumed-role/AWSCodePipelineServiceRole-eu-central-1-immobiliare-demo/1693667211945"
 }
