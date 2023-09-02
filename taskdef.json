@@ -1,25 +1,83 @@
 {
-
-    "executionRoleArn": "arn:aws:iam::044876182819:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
             "name": "hello-world",
             "image": "<IMAGE1_NAME>",
-            "essential": true,
+            "cpu": 0,
             "portMappings": [
                 {
+                    "name": "hello-world-80-tcp",
+                    "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
-                    "containerPort": 80
+                    "appProtocol": "http"
                 }
-            ]
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/hello-world",
+                    "awslogs-region": "eu-central-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            }
         }
+    ],
+    "family": "hello-world",
+    "taskRoleArn": "arn:aws:iam::044876182819:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::044876182819:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 4,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
     ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "networkMode": "awsvpc",
-    "cpu": "256",
-    "memory": "512",
-    "family": "ecs-demo"
+    "cpu": "1024",
+    "memory": "3072",
+    "registeredAt": "2023-09-02T15:06:52.236Z",
+    "registeredBy": "arn:aws:sts::044876182819:assumed-role/AWSCodePipelineServiceRole-eu-central-1-immobiliare-demo/1693667211945",
+    "tags": []
 }
