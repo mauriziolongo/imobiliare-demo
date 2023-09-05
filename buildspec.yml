@@ -22,11 +22,14 @@ phases:
     - docker push $REPOSITORY_URI:latest
     - docker push $REPOSITORY_URI:$IMAGE_TAG
     - echo Writing image definitions file... 
-    - printf '[{"name":"hello-world","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinition.json
+    - printf '[{"name":"hello-world","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
     - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json   
+    - printf '{"AWSEBDockerrunVersion":"1","Image":{"Name":"%s","Update":"true"},"Ports":[{"ContainerPort":80,"HostPort":80}]}' $REPOSITORY_URI:$IMAGE_TAG > Dockerrun.aws.json
+      - cat Dockerrun.aws.json
 artifacts:
   files:
-    - imagedefinition.json
+    - imagedefinitions.json
     - taskdef.json 
     - imageDetail.json
     - appspec.yaml
+    - Dockerrun.aws.json
