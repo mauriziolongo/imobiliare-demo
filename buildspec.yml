@@ -26,6 +26,13 @@ phases:
     - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imageDetail.json   
     - printf '{"AWSEBDockerrunVersion":"1","Image":{"Name":"%s","Update":"true"},"Ports":[{"ContainerPort":80}]}' $REPOSITORY_URI:$IMAGE_TAG > Dockerrun.aws.json
     - cat Dockerrun.aws.json
+    - wget https://raw.githubusercontent.com/qmetry/cucumber-javascript-example/master/test-result.json
+    - find ./     
+reports:
+  rspec:
+    files:
+      - 'test-result.json'
+    file-format: CucumberJson
 artifacts:
   files:
     - imagedefinitions.json
