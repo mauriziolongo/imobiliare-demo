@@ -1,7 +1,11 @@
-<?php
+<!DOCTYPE html>
+<html>
+<body>
+<h1>CI/CD demo</h1>
 
-echo "Hello, World from Docker! <br>";
-echo "Version 20 Imobiliare <br>";
-echo "Hello ECS! <br>";
+<h2>Version 1</h2>
 
-?>
+
+
+</body>
+</html>
