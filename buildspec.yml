@@ -35,8 +35,11 @@ reports:
     file-format: CucumberJson
 artifacts:
   files:
+# ElasticBeanStalk  
+    - Dockerrun.aws.json  
+# ECS Service
     - imagedefinitions.json
+# ECS Serice blue/green
     - taskdef.json 
     - imageDetail.json
     - appspec.yaml
-    - Dockerrun.aws.json
