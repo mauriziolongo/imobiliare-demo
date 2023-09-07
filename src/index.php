@@ -3,7 +3,7 @@
 <body>
 <h1>CI/CD demo</h1>
 
-<h2>Version 2</h2>
+<h2>Version 3</h2>
 
 
 
