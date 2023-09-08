@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+h1 {
+  font-size: 180px;
+}
+
+</style>
+</head>
 <body>
-<h1>CI/CD demo</h1>
 
-<h2>Version 3</h2>
-
-
+<h1>CI/CD demo - Version 1</h1>
 
 </body>
 </html>
